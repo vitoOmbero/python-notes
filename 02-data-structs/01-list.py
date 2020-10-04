@@ -133,3 +133,47 @@ def get_second(item):
 
 tuplist.sort(key=get_second)
 print(tuplist)
+
+
+# lambda expr
+
+tuplist.sort(key=lambda pair: pair[0])
+print(tuplist)
+
+# map function
+
+numbs = []
+for pair in tuplist:
+    numbs.append(pair[1])
+
+numbs_ = list(map(lambda pair: pair[1], tuplist))
+print("numbs")
+print(numbs_)
+
+
+filt_ = list(filter(lambda pair: pair[1] >= 150, tuplist))
+print("filt_")
+print(filt_)
+
+# comprehension
+
+numbs_2 = [pair[1] for pair in tuplist]
+print(type(numbs_2))
+print(numbs_2)
+
+filt_2 = [pair[1] >= 150 for pair in tuplist]
+print(type(filt_2))
+print(filt_2)
+
+
+l()
+l()
+# zip function
+print("zip")
+
+list1 = [1, 2, 3, 4]
+list2 = [10, 20, 30, 40]
+
+print(zip(list1, list2))
+print(list(zip(list1, list2)))
+print(list(zip("qwa", list1, list2)))
